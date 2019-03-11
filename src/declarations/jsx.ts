@@ -17,7 +17,7 @@ declare global {
 export namespace JSXElements {
   export interface DefaultIntrinsicElements {
     // Stencil elements
-    slot: JSXElements.SlotAttributes;
+    slot: JSXElements.SlotAttributes<HTMLSlotElement>;
 
     // HTML
     a: JSXElements.AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -135,7 +135,7 @@ export namespace JSXElements {
     wbr: JSXElements.HTMLAttributes;
   }
 
-  export interface SlotAttributes {
+  export interface SlotAttributes<T> extends HTMLAttributes<T> {
     name?: string;
     slot?: string;
   }
